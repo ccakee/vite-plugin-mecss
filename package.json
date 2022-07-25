@@ -1,7 +1,7 @@
 {
-  "name": "vite-plugin-progress",
+  "name": "vite-plugin-mecss",
   "version": "0.0.3",
-  "description": "A progress bar plugin for Vite.",
+  "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

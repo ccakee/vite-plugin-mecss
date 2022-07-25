@@ -24,7 +24,8 @@
 |  ` bottom:100px                `   | ` b="100"      `             | 
 |  ` color:red                   `   | ` color="red"  `             | 
 |  ` background-color:red        `   | ` bg="red"     `             | 
-| ` position:static \ relative \ fixed \ absolute \ sticky ` | `pos-static \ pos-relative \ pos-fixed \ pos-absolute \ pos-sticky  `  | 
+| ` position:static \ relative \ fixed \ absolute \ sticky ` | `static \ relative \ fixed \ absolute \ sticky  `  | 
+| ` display:none \ inline \ flex \ flexbox \ flow-root \ grid \ block \ inline-block \ list-item \ run-in \ table \ inline-table \ table-row-group \ table-header-group \ table-footer-group \ table-row \ table-colume-group \ table-colume \ table-cell \ table-caption \ inherit`|`none \ inline \ flex \ flexbox \ flow-root \ grid \ block \ inline-block \ list-item \ run-in \ table \ inline-table \ table-row-group \ table-header-group \ table-footer-group \ table-row \ table-colume-group \ table-colume \ table-cell \ table-caption \ inherit`|
 | ` margin:100px                  `  | ` m="100"                 ` | 
 | ` margin-top:100px              `  | ` mt="100"                ` | 
 | ` margin-left:100px             `  | ` ml="100"                ` | 
