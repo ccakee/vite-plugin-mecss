@@ -13,18 +13,17 @@
     }
   },
   "engines": {
-    "node": ">=14",
-    "pnpm": ">=7.0.0"
+    "node": ">=14"
   },
-  "packageManager": "pnpm@7.0.0",
+  "packageManager": "npm@7.0.0",
   "scripts": {
-    "dev": "pnpm run build -- --watch --ignore-watch examples",
+    "dev": "npm run build -- --watch --ignore-watch examples",
     "build": "tsup src/index.ts --dts --format cjs,esm",
-    "prepublishOnly": "pnpm run build",
-    "release": "npx bumpp --push --tag --commit && pnpm publish",
-    "example:react": "cd examples/vite-react && pnpm run build",
-    "example:vue2": "cd examples/vite-vue2 && pnpm run build",
-    "example:vue3": "cd examples/vite-vue3 && pnpm run build"
+    "prepublishOnly": "npm run build",
+    "release": "npx bumpp --push --tag --commit && npm publish",
+    "example:react": "cd examples/vite-react && npm run build",
+    "example:vue2": "cd examples/vite-vue2 && npm run build",
+    "example:vue3": "cd examples/vite-vue3 && npm run build"
   },
   "repository": {
     "type": "git",
