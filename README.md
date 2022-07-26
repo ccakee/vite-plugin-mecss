@@ -7,7 +7,6 @@
     test text
 </div>
   ||
-  ||
 <div w="100" h="100" m="30" color="red" bor="10 #ccc">
     test text
 </div>

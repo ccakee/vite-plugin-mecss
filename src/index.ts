@@ -1,5 +1,5 @@
 import type { PluginOption } from 'vite';
-import { setNumberType, attributeList } from './cache'
+import { setNumberType, attributeList } from './mecss'
 // import fs from 'fs'
 interface KV {
     key: string
