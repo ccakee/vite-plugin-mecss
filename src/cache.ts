@@ -36,16 +36,16 @@ export function setNumberType({ numberTypeArr }) {
     // 数值
     numberTypeArr.forEach(item => {
         if (item.key == 'm') {
-            style.push(`[${item.key}~="${item.value}"]{margin:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{margin:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'p') {
             style.push(`[${item.key}~="${item.value}"]{padding:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'bor') {
-            const items = item.value.split(' ')
+            const items = item.value.trim().split(' ')
             items.forEach((item2, index2) => {
                 if (isColor(item2)) {
-                    style.push(`[${item.key}~="${item2}"]{border: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
+                    style.push(`[${item.key}="${item.value}"]{border: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
                 }
             })
         }
@@ -110,34 +110,34 @@ export function setNumberType({ numberTypeArr }) {
         }
         // border
         if (item.key == 'bor-t') {
-            const items = item.value.split(' ')
+            const items = item.value.trim().split(' ')
             items.forEach((item2, index2) => {
                 if (isColor(item2)) {
-                    style.push(`[${item.key}~="${item2}"]{border-top: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
+                    style.push(`[${item.key}="${item.value}"]{border-top: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
                 }
             })
         }
         if (item.key == 'bor-l') {
-            const items = item.value.split(' ')
+            const items = item.value.trim().split(' ')
             items.forEach((item2, index2) => {
                 if (isColor(item2)) {
-                    style.push(`[${item.key}~="${item2}"]{border-left: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
+                    style.push(`[${item.key}="${item.value}"]{border-left: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
                 }
             })
         }
         if (item.key == 'bor-r') {
-            const items = item.value.split(' ')
+            const items = item.value.trim().split(' ')
             items.forEach((item2, index2) => {
                 if (isColor(item2)) {
-                    style.push(`[${item.key}~="${item2}"]{border-right: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
+                    style.push(`[${item.key}="${item.value}"]{border-right: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
                 }
             })
         }
         if (item.key == 'bor-b') {
-            const items = item.value.split(' ')
+            const items = item.value.trim().split(' ')
             items.forEach((item2, index2) => {
                 if (isColor(item2)) {
-                    style.push(`[${item.key}~="${item2}"]{border-bottom: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
+                    style.push(`[${item.key}="${item.value}"]{border-bottom: solid ${item2} ${isMeNumber(items[index2 === 0 ? 1 : 0]) ? (items[index2 === 0 ? 1 : 0] / 12).toFixed(2) + 'rem' : items[index2 === 0 ? 1 : 0]}}`)
                 }
             })
         }

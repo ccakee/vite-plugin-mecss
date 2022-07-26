@@ -10,6 +10,7 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'src')
         }
     },
+    base:'./',
     plugins: [vue(), mecss()],
     server: {
         port: 8088,
