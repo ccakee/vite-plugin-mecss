@@ -22,22 +22,30 @@ export default function vitePluginTemplate(): PluginOption {
         config(config, { command }) {
         },
         load(this, id, options) {
+
+        },
+        handleHotUpdate({modules}){
+           if (modules[0]?.id?.indexOf('mess') === -1){
+            return;
+           }
         },
         // 构建阶段的通用钩子：在每个传入模块请求时被调用：在每个传入模块请求时被调用，主要是用来转换单个模块
         transform(code, id) {
-            attributeList.forEach((item) => {
-                const pageAttr = new RegExp(` ${item}` + '(.+?)\"', 'g')
-                const tempAttr = code.match(pageAttr)
-                if (tempAttr) {
-                    tempAttr.forEach(str => {
-                        let temp = str.split('=')
-                        temp[1] = temp[1].replace(/"/g, '')
-                        arr.push({ key: temp[0], value: temp[1] })
-                    });
-                }
-            })
-            arr.forEach((item) => { item.key = item.key.trim() })
-            setNumberType({ numberTypeArr: [...new Set(arr)] })
+            if (id.indexOf('mess') === -1 || id.indexOf('node_modules') === -1) {
+                attributeList.forEach((item) => {
+                    const pageAttr = new RegExp(` ${item}` + '(.+?)\"', 'g')
+                    const tempAttr = code.match(pageAttr)
+                    if (tempAttr) {
+                        tempAttr.forEach(str => {
+                            let temp = str.split('=')
+                            temp[1] = temp[1].replace(/"/g, '')
+                            arr.push({ key: temp[0], value: temp[1] })
+                        });
+                    }
+                })
+                arr.forEach((item) => { item.key = item.key.trim() })
+                setNumberType({ numberTypeArr: [...new Set(arr)] })
+            }
         },
     };
 }

@@ -31,7 +31,7 @@ export function setNumberType({ numberTypeArr }) {
     style.push(`[fr]{float:right}`)
     // 垂直对齐
     verticalAlign.forEach((vert) => {
-        style.push(`[va~="${vert}"]{vertical-align:${vert}}`)
+        style.push(`[va="${vert}"]{vertical-align:${vert}}`)
     })
     // 数值
     numberTypeArr.forEach(item => {
@@ -39,7 +39,7 @@ export function setNumberType({ numberTypeArr }) {
             style.push(`[${item.key}="${item.value}"]{margin:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'p') {
-            style.push(`[${item.key}~="${item.value}"]{padding:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{padding:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'bor') {
             const items = item.value.trim().split(' ')
@@ -53,64 +53,64 @@ export function setNumberType({ numberTypeArr }) {
     numberTypeArr.forEach(item => {
         // 
         if (item.key == 'w') {
-            style.push(`[${item.key}~="${item.value}"]{width:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{width:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'h') {
-            style.push(`[${item.key}~="${item.value}"]{height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 't') {
-            style.push(`[${item.key}~="${item.value}"]{top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'l') {
-            style.push(`[${item.key}~="${item.value}"]{left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'r') {
-            style.push(`[${item.key}~="${item.value}"]{right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'b') {
-            style.push(`[${item.key}~="${item.value}"]{bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         // margin
         if (item.key == 'mt') {
-            style.push(`[${item.key}~="${item.value}"]{margin-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{margin-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'ml') {
-            style.push(`[${item.key}~="${item.value}"]{margin-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{margin-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'mr') {
-            style.push(`[${item.key}~="${item.value}"]{margin-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{margin-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'mb') {
-            style.push(`[${item.key}~="${item.value}"]{margin-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{margin-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         // padding
         if (item.key == 'pt') {
-            style.push(`[${item.key}~="${item.value}"]{padding-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{padding-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'pl') {
-            style.push(`[${item.key}~="${item.value}"]{padding-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{padding-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'pr') {
-            style.push(`[${item.key}~="${item.value}"]{padding-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{padding-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         if (item.key == 'pb') {
-            style.push(`[${item.key}~="${item.value}"]{padding-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{padding-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         // line-height
         if (item.key == 'lh') {
-            style.push(`[${item.key}~="${item.value}"]{line-height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{line-height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         // font-size
         if (item.key == 'fs') {
-            style.push(`[${item.key}~="${item.value}"]{font-size:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{font-size:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
         }
         // color
         if (item.key == 'color') {
-            style.push(`[${item.key}~="${item.value}"]{color:${item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{color:${item.value}}`)
         }
         // background-color
         if (item.key == 'bg') {
-            style.push(`[${item.key}~="${item.value}"]{background-color:${item.value}}`)
+            style.push(`[${item.key}="${item.value}"]{background-color:${item.value}}`)
         }
         // border
         if (item.key == 'bor-t') {
@@ -147,5 +147,5 @@ export function setNumberType({ numberTypeArr }) {
         }
     });
     style = [...new Set(style)]
-    fs.writeFileSync('./mess.css', style.join(""))
+    fs.writeFileSync('./src/assets/mess.css', style.join(""))
 }

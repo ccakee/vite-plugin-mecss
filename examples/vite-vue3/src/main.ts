@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import store from './store';
 import router from './router';
-import '../mess.css'
+import './assets/mess.css'
 
 // 创建vue实例
 const app = createApp(App);
