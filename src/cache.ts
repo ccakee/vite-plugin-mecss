@@ -5,7 +5,7 @@ const displays = ['none', 'inline', 'flex', 'flexbox', 'flow-root', 'grid', 'blo
 const positions = ['static', 'relative', 'fixed', 'absolute', 'sticky']
 const verticalAlign = ['auto', 'middle', 'baseline', 'bottom', 'sub', 'super', 'text-bottom', 'text-top', 'top']
 export const attributeList = ['w=', 'h=', 't=', 'l=', 'r=', 'b=', 'mt=', 'm=', 'ml=', 'mr=', 'mb=', 'p=', 'pt=', 'pl=', 'pr=', 'pb=', 'lh=', 'fs=', 'bor=',
-    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=']
+    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=','bg=']
 
 function isMeNumber(value) {
     return Number(value) === 0 ? true : Number(value)
@@ -107,6 +107,10 @@ export function setNumberType({ numberTypeArr }) {
         // color
         if (item.key == 'color') {
             style.push(`[${item.key}~="${item.value}"]{color:${item.value}}`)
+        }
+        // background-color
+        if (item.key == 'bg') {
+            style.push(`[${item.key}~="${item.value}"]{background-color:${item.value}}`)
         }
         // border
         if (item.key == 'bor-t') {

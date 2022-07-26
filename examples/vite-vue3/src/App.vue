@@ -1,16 +1,9 @@
 <template>
-    <div>
-        <div  mt="200"><RouterView /></div>
-        <div bor="3 #ccc" w="300" m="10px auto">
-            1
-        </div>
-        <div ml="123" mt="210px" t="1" bor-t="30px red">
-            1
-        </div>
-        <div xxx color="#c47e34" bor-t="red 1px" fs="20px" absolute l="200" t="100" bor-b="10px green" w="30%">
-            12
-        </div>
+    <RouterView />
+    <div t="0" z-index="-999" l="0" fixed bg="#cfe8fc" w="100vw" h="100vh">
+        1
     </div>
+
 </template>
 <script>
 export default {
@@ -20,10 +13,8 @@ export default {
 }
 </script>
 <style>
-.div {
-    margin: 1px;
-}
-[xxx]{
-    margin-top: 3000px !important;
+* {
+    margin: 0;
+    padding: 0;
 }
 </style>
