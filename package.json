@@ -26,7 +26,7 @@
     "example:vue3": "cd examples/vite-vue3 && npm run build"
   },
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "keywords": [
     "vite",
