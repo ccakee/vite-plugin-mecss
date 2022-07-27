@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-mecss",
   "version": "0.1.5",
-  "description": "",
+  "description": "css样式属性化的vite插件",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
