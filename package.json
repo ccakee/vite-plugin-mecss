@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-mecss",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,7 +27,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeddygong/vite-plugin-progress.git"
   },
   "keywords": [
     "vite",
@@ -37,9 +36,8 @@
   "author": "jeddygong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeddygong/vite-plugin-progress/issues"
   },
-  "homepage": "https://github.com/jeddygong/vite-plugin-progress#readme",
+  "homepage": "https://github.com/ccakee/vite-plugin-mecss",
   "peerDependencies": {
     "vite": ">2.0.0-0"
   },
