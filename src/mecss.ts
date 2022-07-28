@@ -5,7 +5,38 @@ const displays = ['none', 'inline', 'flex', 'flexbox', 'flow-root', 'grid', 'blo
 const positions = ['static', 'relative', 'fixed', 'absolute', 'sticky']
 const verticalAlign = ['auto', 'middle', 'baseline', 'bottom', 'sub', 'super', 'text-bottom', 'text-top', 'top']
 export const attributeList = ['w=', 'h=', 't=', 'l=', 'r=', 'b=', 'mt=', 'm=', 'ml=', 'mr=', 'mb=', 'p=', 'pt=', 'pl=', 'pr=', 'pb=', 'lh=', 'fs=', 'bor=',
-    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=','bg=']
+    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=', 'bg=', 'max-h=', 'max-w=', 'min-h=', 'min-w=', 'radius=']
+
+interface mateList {
+    id: number
+    attr: string //属性简写
+    attribute: string //样式
+}
+const attributeMateList: mateList[] = [
+    { id: 1, attr: 'w', attribute: 'width' },
+    { id: 2, attr: 'h', attribute: 'height' },
+    { id: 3, attr: 'max-h', attribute: 'max-height' },
+    { id: 4, attr: 'max-w', attribute: 'max-width' },
+    { id: 5, attr: 'min-h', attribute: 'min-height' },
+    { id: 6, attr: 'min-w', attribute: 'min-width' },
+    { id: 7, attr: 't', attribute: 'top' },
+    { id: 8, attr: 'l', attribute: 'left' },
+    { id: 9, attr: 'r', attribute: 'right' },
+    { id: 10, attr: 'b', attribute: 'bottom' },
+    { id: 11, attr: 'mt', attribute: 'margin-top' },
+    { id: 12, attr: 'ml', attribute: 'margin-left' },
+    { id: 13, attr: 'mr', attribute: 'margin-right' },
+    { id: 14, attr: 'mb', attribute: 'margin-bottom' },
+    { id: 15, attr: 'pt', attribute: 'padding-top' },
+    { id: 16, attr: 'pl', attribute: 'padding-left' },
+    { id: 17, attr: 'pr', attribute: 'padding-right' },
+    { id: 18, attr: 'pb', attribute: 'padding-bottom' },
+    { id: 19, attr: 'lh', attribute: 'line-height' },
+    { id: 20, attr: 'fs', attribute: 'font-size' },
+    { id: 21, attr: 'color', attribute: 'color' },
+    { id: 22, attr: 'bg', attribute: 'background-color' },
+    { id: 23, attr: 'radius', attribute: 'border-radius' },
+]
 
 function isMeNumber(value) {
     return Number(value) === 0 ? true : Number(value)
@@ -51,67 +82,14 @@ export function setNumberType({ numberTypeArr }) {
         }
     })
     numberTypeArr.forEach(item => {
-        // 
-        if (item.key == 'w') {
-            style.push(`[${item.key}="${item.value}"]{width:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'h') {
-            style.push(`[${item.key}="${item.value}"]{height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 't') {
-            style.push(`[${item.key}="${item.value}"]{top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'l') {
-            style.push(`[${item.key}="${item.value}"]{left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'r') {
-            style.push(`[${item.key}="${item.value}"]{right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'b') {
-            style.push(`[${item.key}="${item.value}"]{bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        // margin
-        if (item.key == 'mt') {
-            style.push(`[${item.key}="${item.value}"]{margin-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'ml') {
-            style.push(`[${item.key}="${item.value}"]{margin-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'mr') {
-            style.push(`[${item.key}="${item.value}"]{margin-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'mb') {
-            style.push(`[${item.key}="${item.value}"]{margin-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        // padding
-        if (item.key == 'pt') {
-            style.push(`[${item.key}="${item.value}"]{padding-top:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'pl') {
-            style.push(`[${item.key}="${item.value}"]{padding-left:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'pr') {
-            style.push(`[${item.key}="${item.value}"]{padding-right:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        if (item.key == 'pb') {
-            style.push(`[${item.key}="${item.value}"]{padding-bottom:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        // line-height
-        if (item.key == 'lh') {
-            style.push(`[${item.key}="${item.value}"]{line-height:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        // font-size
-        if (item.key == 'fs') {
-            style.push(`[${item.key}="${item.value}"]{font-size:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
-        }
-        // color
-        if (item.key == 'color') {
-            style.push(`[${item.key}="${item.value}"]{color:${item.value}}`)
-        }
-        // background-color
-        if (item.key == 'bg') {
-            style.push(`[${item.key}="${item.value}"]{background-color:${item.value}}`)
-        }
+        attributeMateList.forEach(item2 => {
+            if (item.key == item2.attr) {
+                style.push(`[${item.key}="${item.value}"]{${item2.attribute}:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            }
+        })
+    })
+
+    numberTypeArr.forEach(item => {
         // border
         if (item.key == 'bor-t') {
             const items = item.value.trim().split(' ')
