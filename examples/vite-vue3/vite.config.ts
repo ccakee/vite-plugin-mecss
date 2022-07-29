@@ -11,7 +11,7 @@ export default defineConfig({
         }
     },
     base:'./',
-    plugins: [vue(), mecss()],
+    plugins: [vue(), mecss({pathCss:'./src/assets/mess.css'})],
     server: {
         port: 8088,
         hmr: {

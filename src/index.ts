@@ -5,17 +5,16 @@ interface KV {
     key: string
     value: string
 }
+interface option {
+    cssPath?: string
+}
 let arr: KV[] = []
 
-export default function vitePluginTemplate(): PluginOption {
+export default function vitePluginTemplate({ cssPath }: option): PluginOption {
     return {
         name: 'vite-plugin-mecss',
         enforce: 'pre', // post
         apply: 'serve', // apply 亦可以是一个函数
-        config(config, { command }) {
-            return config
-        },
-        
         transform(code, id) {
             attributeList.forEach((item) => {
                 const pageAttr = new RegExp(` ${item}` + '(.+?)\"', 'g')
@@ -29,7 +28,7 @@ export default function vitePluginTemplate(): PluginOption {
                 }
             })
             arr.forEach((item) => { item.key = item.key.trim() })
-            setNumberType({ numberTypeArr: [...new Set(arr)] })
+            setNumberType({ numberTypeArr: [...new Set(arr)], cssPath })
         },
     };
 }
