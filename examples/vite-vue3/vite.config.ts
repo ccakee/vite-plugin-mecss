@@ -10,6 +10,7 @@ export default defineConfig({
             '@': path.resolve(__dirname, 'src')
         }
     },
+    hmr:false,
     base:'./',
     plugins: [vue(), mecss()],
     server: {

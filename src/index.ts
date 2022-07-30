@@ -15,7 +15,12 @@ export default function vitePluginTemplate(): PluginOption {
         config(config, { command }) {
             return config
         },
-        
+        handleHotUpdate(ctx) {
+            console.log(
+                ctx.file
+            );
+            return
+        },
         transform(code, id) {
             attributeList.forEach((item) => {
                 const pageAttr = new RegExp(` ${item}` + '(.+?)\"', 'g')
