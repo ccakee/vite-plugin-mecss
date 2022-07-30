@@ -15,18 +15,6 @@ export default function vitePluginTemplate({ cssPath }: option): PluginOption {
         name: 'vite-plugin-mecss',
         enforce: 'pre', // post
         apply: 'serve', // apply 亦可以是一个函数
-<<<<<<< HEAD
-        config(config, { command }) {
-            return config
-        },
-        handleHotUpdate(ctx) {
-            console.log(
-                ctx.file
-            );
-            return
-        },
-=======
->>>>>>> 680f69c409d39bb43d5f0f8cd529365be80f75ec
         transform(code, id) {
             attributeList.forEach((item) => {
                 const pageAttr = new RegExp(` ${item}` + '(.+?)\"', 'g')
