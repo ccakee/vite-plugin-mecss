@@ -77,9 +77,12 @@ createApp(App).mount('#app')
 可使用相关单位(如若不书写单位将自动转为rem) 如 ：
 ` mt="10px | 10vh | 10rem | ..."  ` 
 `color:"red | #cccccc | rgb(245,245,245)"`
-display和position可直接以属性方式写在标签上
+<br>
+display和position可直接以属性方式写在标签上 
 ` <div block flex></div> `
 ` <div absolute t="10vh" l="20px"></div> `
 
-
+0.1.6新增配置 `pathCss` 
+可予 `plugins` 中配置文件生成位置并命名css文件名
+plugins: [mecss({pathCss: **'./src/assets/mess.css'**})],
 

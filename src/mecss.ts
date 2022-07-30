@@ -47,7 +47,7 @@ function isColor(value) {
     return color.test(value) || colors.some((item) => item == value)
 }
 
-export function setNumberType({ numberTypeArr }) {
+export function setNumberType({ numberTypeArr, cssPath }) {
     let style: string[] = []
     // 定位
     positions.forEach((pos) => {
@@ -125,5 +125,5 @@ export function setNumberType({ numberTypeArr }) {
         }
     });
     style = [...new Set(style)]
-    fs.writeFileSync('./src/assets/mess.css', style.join(""))
+    fs.writeFileSync(cssPath || './src/assets/mess.css', style.join(""))
 }

@@ -35,8 +35,7 @@
   ],
   "author": "jeddygong",
   "license": "MIT",
-  "bugs": {
-  },
+  "bugs": {},
   "homepage": "https://github.com/ccakee/vite-plugin-mecss",
   "peerDependencies": {
     "vite": ">2.0.0-0"
