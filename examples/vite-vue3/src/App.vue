@@ -1,6 +1,6 @@
 <template>
     <RouterView />
-    <div t="0" l="0" w="40%" bor="2px red" h="10vh" color="orange">
+    <div mt='100' t="0" l="0" w="40%" bor="2px red" h="10vh" color="orange">
         1
     </div>
 </template>
