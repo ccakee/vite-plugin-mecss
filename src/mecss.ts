@@ -5,7 +5,7 @@ const displays = ['none', 'inline', 'flex', 'flexbox', 'flow-root', 'grid', 'blo
 const positions = ['static', 'relative', 'fixed', 'absolute', 'sticky']
 const verticalAlign = ['auto', 'middle', 'baseline', 'bottom', 'sub', 'super', 'text-bottom', 'text-top', 'top']
 export const attributeList = ['w=', 'h=', 't=', 'l=', 'r=', 'b=', 'mt=', 'm=', 'ml=', 'mr=', 'mb=', 'p=', 'pt=', 'pl=', 'pr=', 'pb=', 'lh=', 'fs=', 'bor=',
-    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=', 'bg=', 'max-h=', 'max-w=', 'min-h=', 'min-w=', 'radius=']
+    'bor-t=', 'bor-l=', 'bor-r=', 'bor-b=', 'z-index=', 'color=', 'bg=', 'max-h=', 'max-w=', 'min-h=', 'min-w=', 'radius=', 'hover=']
 
 interface mateList {
     id: number
@@ -64,6 +64,21 @@ export function setNumberType({ numberTypeArr, cssPath }) {
     verticalAlign.forEach((vert) => {
         style.push(`[va="${vert}"]{vertical-align:${vert}}`)
     })
+    // hover;
+    numberTypeArr.forEach(item => {
+        if (item.key == 'hover') {
+            const h_attrList = item.value.split(" ")
+            h_attrList.forEach(ha => {
+                let k = ha.split('(')[0]
+                let v = ha.split('(')[1]?.substr(0, ha?.split('(')[1].length - 1)
+                attributeMateList.forEach(a => {
+                    if (k == a.attr) {
+                        style.push(`[${item.key}="${item.value}"]:hover{${a.attribute}:${v}}`)
+                    }
+                })
+            });
+        }
+    })
     // 数值
     numberTypeArr.forEach(item => {
         if (item.key == 'm') {
@@ -83,8 +98,8 @@ export function setNumberType({ numberTypeArr, cssPath }) {
     })
     numberTypeArr.forEach(item => {
         attributeMateList.forEach(item2 => {
-            if (item.key == item2.attr) {
-                style.push(`[${item.key}="${item.value}"]{${item2.attribute}:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
+            if (item.key == item2.attr && item.key != 'm' && item.key != 'p' && item.key != 'bor') {
+                style.push(`[${item.key}~="${item.value}"]{${item2.attribute}:${isMeNumber(item.value) ? (item.value / 12).toFixed(2) + 'rem' : item.value}}`)
             }
         })
     })

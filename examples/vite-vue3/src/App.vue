@@ -1,14 +1,12 @@
 <template>
     <RouterView />
-    <div t="0" z-index="-999" l="0" w="40%" bor="2px red" h="10vh" color="green">
-        1
-    </div>
+    <div absolute t="10" l="200"  mt='200' h="222" bg="#ccc" bor="10 yellow" hover=">div bg(red) h(20px) w(20px) none"></div>
 </template>
 <script>
 export default {
     data() {
         return {};
-    }
+    }     
 }
 </script>
 <style>
