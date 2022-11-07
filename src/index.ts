@@ -19,10 +19,12 @@ export default function vitePluginTemplate({ cssPath }: option): PluginOption {
             attributeList.forEach((item) => {
                 const pageAttr = new RegExp(` ${item}` + '(.+?)[\"\|\']', 'g')
                 const tempAttr = code.match(pageAttr)
+                tempAttr&&console.log(tempAttr);
+                
                 if (tempAttr) {
                     tempAttr.forEach(str => {
                         let temp = str.split('=')
-                        temp[1] = temp[1].replace(/"|'/g, '')
+                        temp[1] = temp[1].replace(/[\"|\']/g, '')
                         arr.push({ key: temp[0], value: temp[1] })
                     });
                 }
